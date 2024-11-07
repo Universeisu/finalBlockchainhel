@@ -1,31 +1,70 @@
-# :baby_symbol: vac-chain
+<h2 align="center">Truffle and React.js Template - Lottery Contract</h2> <br>
+<p align="center">
+  <img alt="comet" src="./etherscan.png" width="1020">
+</p>
+<p align="center">Rapid Ethereum Dapp Development</p>
 
-## Just a POC, nothing more!
+<p align="center">
+  <img alt="made for ethereum" src="https://img.shields.io/badge/made_for-ethereum-771ea5.svg">
+  <img alt="MIT license" src="https://img.shields.io/badge/license-MIT-blue.svg">
+</p>
 
-![vac-chain](https://raw.github.com/E-Health/vac-chain/develop/notes/vacchain.png)
+---
 
-There are discrete pieces of health information that, if stored on-chain may have a huge impact on operational efficiency, availability and patient safety. Vaccination and allergy information are typical examples.
-vac-chain is a prototype of an on-chain storage of vaccination information on Ethereum blockchain using smart contracts in solidity using the truffle Drizzle box (React/Redux). This may be extended for similar use cases in medicine.
+You can explore this contract on TESTNET Goerli (GTH) Blockchain Explorer (Etherscan) at [here](https://goerli.etherscan.io/address/0xDDb2acDeAfDdA6063ADF6D1D19ECe28F9c9A278D)
 
-## Instructions
+---
 
-* check out this repo and *npm install* in the main folder
-* *npm run ganache*
-* Open a second terminal and
+## Smart Contract Lottery Development with Create-React-App
+
+How does this differ from the official React Truffle Box?
+
+- **No ejection** required;
+- **React frontend** is located in its own separate folder (i.e. [`/client`](https://github.com/minhtran241/lottery-contract-truffle-react/tree/main/client));
+- **Babel** is included so you can use ES6 module import statements;
+- Uses **Truffle 5.6**
+- Uses **Web3 1.6**
+
+If you have Truffle installed, run the following to get started (more detailed instructions below):
+
+---
+
+## Install Truffle globally
+
+```sh
+npm install -g truffle
 ```
-truffle compile
-truffle migrate
+
+## Testing
+
+First, make sure Ganache is running
+
+```sh
+yarn ganache
 ```
-*  switch to app folder *cd app*
-* *npm install*
-* *npm start*
-* Access application at **localhost:3000**
 
-## Steps
-* Provider adds a record
-* Patient confirms
-* Clients can verify - if *code* matches *hcn*, returns *name* as status
-* Please note that, for the *status* to work, all three roles should have different active accounts. So run *ganache* on a different machine and add the IP to drizzleOptions.js and truffle-config.js. Finally, run the /app on three different systems for each role.
-## Author
+Compile
 
-Bell Eapen (McMaster U) | [Homepage](https://nuchange.ca)
+```sh
+yarn compile
+```
+
+Run all tests
+
+```sh
+yarn test
+```
+
+To run tests in a specific file, run
+
+```sh
+yarn test [path/to/file]
+```
+
+Deploy by connecting to Infura node (specific provider)
+
+**Note:** You have to set up all the environment variables before doing this step
+
+```sh
+yarn deploy
+```
